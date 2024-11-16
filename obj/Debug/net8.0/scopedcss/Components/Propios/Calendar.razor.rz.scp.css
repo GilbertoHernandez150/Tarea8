@@ -1,0 +1,23 @@
+.calendar[b-yzy3h40n3n] {
+    text-align: center;
+    margin: 20px;
+}
+
+.calendar-grid[b-yzy3h40n3n] {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-cell[b-yzy3h40n3n] {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.calendar-cell span[b-yzy3h40n3n] {
+    display: block;
+}

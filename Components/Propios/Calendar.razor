@@ -1,0 +1,104 @@
+@code {
+    [Parameter]
+    public List<Detencion> Detenciones { get; set; } = new List<Detencion>();
+
+    private DateTime currentMonth = DateTime.Now;
+    private int daysInMonth;
+    private DateTime firstDayOfMonth;
+
+    private string[] daysOfWeek = new[] { "Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab" };
+
+    protected override void OnInitialized()
+    {
+        SetMonthData();
+    }
+
+    private void SetMonthData()
+    {
+        firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+        daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+    }
+
+    private void PreviousMonth()
+    {
+        currentMonth = currentMonth.AddMonths(-1);
+        SetMonthData();
+    }
+
+    private void NextMonth()
+    {
+        currentMonth = currentMonth.AddMonths(1);
+        SetMonthData();
+    }
+
+    private int GetDetentionCountByDay(int day)
+    {
+        return Detenciones
+        .Count(d => d.FechaDetencion.Year == currentMonth.Year &&
+        d.FechaDetencion.Month == currentMonth.Month &&
+        d.FechaDetencion.Day == day);
+    }
+}
+
+<div class="calendar">
+    <button @onclick="PreviousMonth">Anterior</button>
+    <span>@currentMonth.ToString("MMMM yyyy")</span>
+    <button @onclick="NextMonth">Siguiente</button>
+
+    <div class="calendar-grid">
+        @foreach (var dayName in daysOfWeek)
+        {
+            <div class="calendar-cell header">@dayName</div>
+        }
+
+
+        @for (int i = 0; i < (int)firstDayOfMonth.DayOfWeek; i++)
+        {
+            <div class="calendar-cell empty"></div>
+        }
+
+        @for (int day = 1; day <= daysInMonth; day++)
+        {
+            <div class="calendar-cell">
+                <span>@day</span>
+                <span>@GetDetentionCountByDay(day) detenciones</span>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .calendar {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .calendar-cell {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+    }
+
+    .calendar-cell.header {
+        font-weight: bold;
+        background-color: #e0e0e0;
+    }
+
+    .calendar-cell.empty {
+        background-color: transparent;
+        border: none;
+    }
+
+    .calendar-cell span {
+        display: block;
+    }
+</style>

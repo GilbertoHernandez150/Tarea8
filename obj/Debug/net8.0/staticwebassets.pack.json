@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\WebMia\\Tarea8\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Tarea8.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Tarea8.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\WebMia\\Tarea8\\wwwroot\\Images\\Mifoto.jpg",
+      "PackagePath": "staticwebassets\\Images\\Mifoto.jpg"
+    },
+    {
+      "Id": "C:\\WebMia\\Tarea8\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\WebMia\\Tarea8\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\WebMia\\Tarea8\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\WebMia\\Tarea8\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Tarea8.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Tarea8.props",
+      "PackagePath": "build\\Tarea8.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Tarea8.props",
+      "PackagePath": "buildMultiTargeting\\Tarea8.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Tarea8.props",
+      "PackagePath": "buildTransitive\\Tarea8.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
